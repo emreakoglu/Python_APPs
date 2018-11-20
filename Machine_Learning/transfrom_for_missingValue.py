@@ -15,10 +15,10 @@ veriler = pd.read_csv('eksikveriler.csv')
 
 print (veriler)
 
-#boy = veriler[['boy']]
+#boy = veriler[['boy']]  #DataFrame
 #print (boy)
 
-#boykilo = veriler[['boy','kilo']]
+#boykilo = veriler[['boy','kilo']]  # DataFrame
 #print(boykilo)
 
 #class insan():
@@ -41,7 +41,5 @@ imputer  =  Imputer(missing_values='NaN',strategy='mean',axis=0)
 Yas = veriler.iloc[:,1:4].values
 print(Yas)
 
-imputer = imputer.fit(Yas[:,1:4])
-Yas[:,1:4] = imputer.transform(Yas[:,1:4])
-
-print (Yas)
+imputer = imputer.fit(Yas[:,1:4]) #imputer stratejisi uygulanıyor
+Yas[:,1:4] = imputer.transform(Yas[:,1:4]) #transform ile veri üzerinde değişiklik yapılacak

@@ -31,3 +31,5 @@ ohe = OneHotEncoder(categorical_features='all') # Her başlık altına denk gele
 ulke = ohe.fit_transform(ulke).toarray()
 
 print (ulke)
+
+sonuc = pd.DataFrame(data = ulke, index = range(22))
