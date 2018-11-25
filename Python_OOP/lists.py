@@ -6,6 +6,7 @@ Created on Thu Nov 22 12:56:46 2018
 """
 
 l=[1,2,3,4]
+#l = [1,'emre',2] # böyle bir liste tanımlayabiliriz fakat, sort edilince hata verir
 print(l)
 l.append(55)
 print(l)
