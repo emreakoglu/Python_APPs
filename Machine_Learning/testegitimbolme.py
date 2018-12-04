@@ -1,12 +1,13 @@
 # -*- coding: utf-8 -*-
 """
-Created on Tue Nov 20 22:02:20 2018
+Created on Tue Dec  4 14:43:39 2018
 
 @author: emreAkoglu
 """
 
-import pandas as pd
+from sklearn.cross_validation import train_test_split
 from sklearn.preprocessing import LabelEncoder ,OneHotEncoder,Imputer
+import pandas as pd
 
 veriler = pd.read_csv('eksikveriler.csv')
 
@@ -40,3 +41,10 @@ cinsiyet_DataFrame = pd.DataFrame(data = cinsiyet, index = range(22), columns = 
 ulke_boy_kilo_yas = pd.concat([sonuc_Ulke, boy_kilo_yas],axis = 1)
 
 ulke_boy_kilo_yas_cinsiyet = pd.concat([ulke_boy_kilo_yas,cinsiyet_DataFrame],axis = 1)
+
+# Buraya kadar  data_MergeCreate_DataFrame.py ile aynı zaten
+
+# verileri 1/3 test verisi 2/3 eğitim verisi olarak bölüyoruz.Bu bölme işlemini random olarak yapıyoruz.
+# bir sonraki derste cinsiyet tahmini yapılacağı için y sonuc_3(cinsiyet değerleri) dataframe'ine 
+# x cinsiyet haricinde olan s(ülke, boy,kilo ve yas değerleri) dataframe'ine bağlıdır.
+x_train, x_test,y_train,y_test = train_test_split(ulke_boy_kilo_yas,cinsiyet_DataFrame,test_size=0.33, random_state=0)

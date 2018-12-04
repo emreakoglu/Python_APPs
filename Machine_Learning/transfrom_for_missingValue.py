@@ -12,26 +12,27 @@ import pandas as pd
 
 
 veriler = pd.read_csv('eksikveriler.csv')
+print(type(veriler))
 
 print (veriler)
 
-#boy = veriler[['boy']]  #DataFrame
-#print (boy)
+boy = veriler[['boy']]  #DataFrame
+print (boy)
 
-#boykilo = veriler[['boy','kilo']]  # DataFrame
-#print(boykilo)
+boykilo = veriler[['boy','kilo']]  # DataFrame
+print(boykilo)
 
-#class insan():
-#    boy = 180
-#    def kosmak(self,b):
-#        return b+10
-#    
-#ali = insan()
-#print(ali.boy)
-#print(ali.kosmak(90))
-#
-#l = [1,2,3] # liste
-#print(l.pop(1))
+class insan():
+    boy = 180
+    def kosmak(self,b):
+        return b+10
+    
+ali = insan()
+print(ali.boy)
+print(ali.kosmak(90))
+
+l = [1,2,3] # liste
+print(l.pop(1))
 
 #sci-kit learn
 from sklearn.preprocessing import Imputer
@@ -43,3 +44,6 @@ print(Yas)
 
 imputer = imputer.fit(Yas[:,1:4]) #imputer stratejisi uygulanıyor
 Yas[:,1:4] = imputer.transform(Yas[:,1:4]) #transform ile veri üzerinde değişiklik yapılacak
+print("imputer uygulandıktan sonra veriler")
+
+print(Yas)
