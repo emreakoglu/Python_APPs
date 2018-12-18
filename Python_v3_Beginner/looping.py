@@ -4,7 +4,7 @@ Created on Wed Nov 21 19:37:54 2018
 
 @author: emreAkoglu
 """
-
+k=10
 i= 1
 while i<10:
     print(i)
